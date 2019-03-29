@@ -25,6 +25,9 @@
     <link href="{{ url_for('static', filename='assets')}}/css/maince5a.css?version=4.4.1" rel="stylesheet">
     <link href="{{ url_for('static', filename='assets')}}/icon_fonts_assets/simple-line-icons/css/simple-line-icons.css"
         rel="stylesheet">
+
+
+        
 </head>
 
 <body class="menu-position-side menu-side-left">
@@ -343,7 +346,7 @@ START - Main Menu
                     <li class=" has-sub-menu"><a href="/app/view_submissions">
                             <div class="icon-w">
                                 <div class="os-icon os-icon-layers"></div>
-                            </div><span>Submissions</span>
+                            </div><span>Sensor values</span>
                         </a>
                         <div class="sub-menu-w">
                                 <div class="sub-menu-header">View Submission</div>
@@ -355,74 +358,12 @@ START - Main Menu
                                 </div>
                             </div>
                     </li>
-                    <li class="sub-header"><span>Tools</span></li>
-                    <li class=" has-sub-menu"><a href="/app/submissions">
-                            <div class="icon-w">
-                                <div class="icon-plus"></div>
-                            </div><span>New Submission</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">New Submission</div>
-                            <div class="sub-menu-icon"><i class="icon-plus"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="/app/submissions">New Submissions</a></li>
-                                    <li><a href="/app/submissions">Extra options</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="/app/add_form">
-                            <div class="icon-w">
-                                <div class="icon-docs"></div>
-                            </div><span>New Document Layout</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">New Document Layout</div>
-                            <div class="sub-menu-icon"><i class="icon-docs"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="/app/add_form">New Document Layout</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sub-header"><span>Profile</span></li>
-                    <li class=" has-sub-menu"><a href="apps_bank.html">
-                            <div class="icon-w">
-                                <div class="icon-user-following"></div>
-                            </div><span>View Profile</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">New Submission</div>
-                            <div class="sub-menu-icon"><i class="icon-user-following"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="/app/submissions">New Submissions</a></li>
-                                    <li><a href="/app/submissions">Extra options</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class=" has-sub-menu"><a href="/logout">
-                            <div class="icon-w">
-                                <div class="icon-power"></div>
-                            </div><span>Logout</span>
-                        </a>
-                        <div class="sub-menu-w">
-                            <div class="sub-menu-header">New Document Layout</div>
-                            <div class="sub-menu-icon"><i class="icon-power"></i></div>
-                            <div class="sub-menu-i">
-                                <ul class="sub-menu">
-                                    <li><a href="/app_add_form">New Document Layout</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
                 </ul>
 
             </div>
@@ -438,8 +379,7 @@ START - Top Bar
                         <div class="fancy-selector-current">
                             <div class="fs-img shadowless"><img alt="" src="{{ url_for('static', filename='assets')}}/img/company5.png"></div>
                             <div class="fs-main-info">
-                                <div class="fs-name">Company Name</div>
-                                <div class="fs-sub"><span>Documents Processed : </span><strong>{{total_invoices}}</strong></div>
+                                <div class="fs-name">Sensor values</div>
                             </div>
                             <div class="fs-selector-trigger"><i class="os-icon os-icon-arrow-down4"></i></div>
                         </div>
@@ -576,28 +516,28 @@ END - Top Bar
                                                         <div class="row mb-xl-2 mb-xxl-3">
                                                             <div class="col-sm-6"><a class="element-box el-tablo centered trend-in-corner padded bold-label"
                                                                     href="#">
-                                                                    <div class="value">{{total_users}}</div>
-                                                                    <div class="label">Total Users</div>
+                                                                    <div class="value" id="sensorOne">{</div>
+                                                                    <div class="label">Sensor One</div>
 
                                                                 </a></div>
                                                             <div class="col-sm-6"><a class="element-box el-tablo centered trend-in-corner padded bold-label"
                                                                     href="#">
-                                                                    <div class="value">{{total_inv}}</div>
-                                                                    <div class="label">Total Layouts</div>
+                                                                    <div class="value" id="sensorTwo"></div>
+                                                                    <div class="label">Sensor Two</div>
 
                                                                 </a></div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6"><a class="element-box el-tablo centered trend-in-corner padded bold-label"
                                                                     href="#">
-                                                                    <div class="value">{{total_invoices}}</div>
-                                                                    <div class="label">Total Processed</div>
+                                                                    <div class="value" id="sensorThree"></div>
+                                                                    <div class="label">Sensor Three</div>
 
                                                                 </a></div>
                                                             <div class="col-sm-6"><a class="element-box el-tablo centered trend-in-corner padded bold-label"
                                                                     href="#">
-                                                                    <div class="value">{{total_sections}}</div>
-                                                                    <div class="label">Total Sections</div>
+                                                                    <div class="value" id="avgValue"></div>
+                                                                    <div class="label">Average Value</div>
 
                                                                 </a></div>
                                                         </div>
@@ -607,7 +547,7 @@ END - Top Bar
                                                     <!--START - Chart Box-->
                                                     <div class="element-box pl-xxl-5 pr-xxl-5">
                                                         <div class="el-tablo bigger highlight bold-label">
-                                                            <div class="value">12,537</div>
+                                                            <div class="value" id="totalCount">12,537</div>
                                                             <div class="label">Total processed</div>
                                                         </div>
                                                         <div class="el-chart-w"><canvas height="400px" id="lineChartCustom"
@@ -623,60 +563,10 @@ END - Top Bar
                             </div>
                         </div>
 
-                        <div class="row pt-4">
-                            <div class="col-sm-12">
-                                <!--START - Recent Ticket Comments-->
-                                <div class="element-wrapper">
-                                    <h6 class="element-header">Recent Document Submissions</h6>
-                                    <div class="element-box-tp">
-                                        <div class="table-responsive">
-                                            <table class="table table-padded">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Uploaded By</th>
-                                                        <th>Uploaded On</th>
-                                                        <th>Document Code</th>
-                                                        <th>Status</th>
-                                                        <th>Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {% for invoice in subs %}
-                                                    <tr>
-
-                                                        <td>
-                                                            <div class="user-with-avatar"><img alt="" src="{{ url_for('static', filename='assets')}}/img/avatar1.jpg"><span>{{invoice['uploaded_by']}}</span></div>
-                                                        </td>
-
-                                                        <td>{{invoice['timestamp']}}</td>
-
-                                                        <td class="nowrap"><span>{{invoice['form_code']}}</span></td>
-
-                                                        <td class="nowrap"><span class="status-pill smaller green"></span><span>Processed</span></td>
-                                                        <td class="row-actions"><a href="#"><i class="os-icon os-icon-grid-10"></i></a><a
-                                                                href="#"><i class="os-icon os-icon-ui-44"></i></a><a
-                                                                class="danger" href="#"><i class="os-icon os-icon-ui-15"></i></a></td>
-                                                    </tr>
-                                                    {% endfor %}
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END - Recent Ticket Comments-->
-                            </div>
-                        </div>
+                        
                         <!--------------------
 START - Color Scheme Toggler
 -------------------->
-                        <div class="floated-colors-btn">
-                            <div class="os-toggler-w">
-                                <div class="os-toggler-i">
-                                    <div class="os-toggler-pill"></div>
-                                </div>
-                            </div><span>Dark </span><span>Colors</span>
-                        </div>
                         <!--------------------
 END - Color Scheme Toggler
 -------------------->
@@ -858,42 +748,49 @@ END - Chat Popup Box
         ga('send', 'pageview');
     </script>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script>
 
     var lineChart = $("#lineChartCustom");
-
+    var data_list_s1;
+    var data_list_s2;
+    var data_list_s3;
+    
     var datapoints = [0, 20, 20, 60, 60, 120, 49, 180, 120, 125, 105, 110, 170];
     var config = {
         type: 'line',
         data: {
             labels: ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
             datasets: [{
-                label: 'Cubic interpolation (monotone)',
-                data: {{data_list_s1 | safe}},
+                label: 'Sensor One',
+                data: data_list_s1,
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(0, 0, 0, 0)',
                 fill: false,
                 cubicInterpolationMode: 'monotone'
             }, {
-                label: 'Cubic interpolation (default)',
-                data: {{data_list_s2 | safe}},
+                label: 'Sensor Two',
+                data: data_list_s2,
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgba(0, 0, 0, 0)',
                 fill: false,
+                cubicInterpolationMode: 'monotone'
             }, {
-                label: 'Linear interpolation',
-                data: {{data_list_s3 | safe}},
+                label: 'Sensor Three',
+                data: data_list_s3,
                 borderColor: 'rgb(54, 162, 235)',
                 backgroundColor: 'rgba(0, 0, 0, 0)',
                 fill: false,
-                lineTension: 0
+                cubicInterpolationMode: 'monotone'
             }]
         },
         options: {
             responsive: true,
             title: {
                 display: true,
-                text: 'Chart.js Line Chart - Cubic interpolation mode'
+                text: 'Sensor data (Realtime plot)'
             },
             tooltips: {
                 mode: 'index'
@@ -922,19 +819,57 @@ END - Chat Popup Box
 
     var myLineChart = new Chart(lineChart, config);
 
+    setInterval((function() {
+            jQuery.getJSON('/get_data', function(data) {
+                //console.log(data);
+                //$("#sensor_{{sensor_id}}").text(data.result);
+                console.log(data.s1);
+                data_list_s1 = data.s1;
+                data_list_s2 = data.s2;
+                data_list_s3 = data.s3;
+                console.log(data_list_s1);
+                console.log(data_list_s2);
+                console.log(data_list_s3);
+                myLineChart.data.datasets[0].data = data.s1;
+                myLineChart.data.datasets[1].data = data.s2;
+                myLineChart.data.datasets[2].data = data.s3;
+                console.log(myLineChart.datasets);
+                myLineChart.update();
+                
+              });
+          }), 1000);
+
+    
+    setInterval((function() {
+      jQuery.getJSON('/get_total', function(data) {
+          $("#totalCount").text(data.result);
+        });
+    }), 1000);
+          
+    setInterval((function() {
+      jQuery.getJSON('/get_s1', function(data) {
+          $("#sensorOne").text(data.result);
+        });
+    }), 1000);
+
+    setInterval((function() {
+      jQuery.getJSON('/get_s2', function(data) {
+          $("#sensorTwo").text(data.result);
+        });
+    }), 1000);
+
+    setInterval((function() {
+      jQuery.getJSON('/get_s3', function(data) {
+          $("#sensorThree").text(data.result);
+        });
+    }), 1000);
+
+    setInterval((function() {
+      jQuery.getJSON('/get_avg', function(data) {
+          $("#avgValue").text(data.result);
+        });
+    }), 1000);
 </script>
-
-
-<script>
-        function loadData(){
-            $.getJSON("/get_data", 
-                 function(data) {
-                     console.log(data);
-                     $('#content').html('The artist is: ' + data.query.results.json.artist + '<br/><br/>');
-                 }); 
-            setTimeout("loadData()",5000);
-         }
-   </script>
 
 </body>
 
